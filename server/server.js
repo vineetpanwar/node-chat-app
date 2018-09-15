@@ -24,14 +24,21 @@ io.on('connection', (socket) => {
   });
   */
 
+  /*
   socket.emit('newMessage',{
     from:'vineet',
     text:'hello',
     createdAt:123
   })
+  */
 
   socket.on('createMessage',(msg) =>{
     console.log('message',msg);
+    io.emit('newMessage',{
+      from:msg.from,
+      text:msg.text,
+      createdAt:new Date().getTime()
+    })
   });
 
   /*

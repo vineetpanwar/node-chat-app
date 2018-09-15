@@ -1,7 +1,7 @@
 var socket = io();
 socket.on('connect',function() {
   console.log('Connected to server');
-
+});
   /*
   socket.emit('createEmail',{
     to:'gen@capl.com',
@@ -10,11 +10,13 @@ socket.on('connect',function() {
   */
 
 
+/*
   socket.emit('createMessage',{
     from:'abhay',
     text:'ha beyy'
   });
 });
+*/
 
 socket.on('newMessage',function(msg){
   console.log('new meassage',msg);
